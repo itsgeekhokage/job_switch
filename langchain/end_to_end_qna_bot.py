@@ -32,6 +32,8 @@ if query := st.chat_input("What's on your mind?"):
         "content": query
     })
 
+    query = st.session_state.messages
+
     # Get response from LLM
     response = llm.invoke(query)
     answer = response.content[0]["text"]
